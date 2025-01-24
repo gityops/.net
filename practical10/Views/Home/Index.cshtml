@@ -1,0 +1,10 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h2>Home Page</h2>
+
+<p>This page is cached for 60 seconds.</p>
+<a asp-controller="Home" asp-action="GetCachedTime" class="btn btn-primary">Get Cached Time</a>
+<a asp-controller="Home" asp-action="CachedPage" class="btn btn-primary">Go to Cached Page</a>
+<a asp-controller="Home" asp-action="NoCachePage" class="btn btn-primary">Go to No-Cache Page</a>

@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "Download Web Content";
+}
+
+<h2>Download Web Content</h2>
+
+<form method="post" asp-controller="Home" asp-action="Download">
+    <div class="form-group">
+        <label for="url">URL:</label>
+        <input type="text" class="form-control" id="url" name="url" />
+    </div>
+    <button type="submit" class="btn btn-primary">Download</button>
+</form>
+
+@if (ViewBag.Error != null)
+{
+    <div class="alert alert-danger mt-3">@ViewBag.Error</div>
+}
+
+@if (ViewBag.Content != null)
+{
+    <div class="mt-3">
+        <h3>Downloaded Content:</h3>
+        <pre>@ViewBag.Content</pre>
+    </div>
+}

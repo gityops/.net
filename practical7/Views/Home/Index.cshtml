@@ -1,0 +1,35 @@
+﻿@model List<practical7.Models.Employee>
+
+@{
+    ViewData["Title"] = "Employee List with Bonuses";
+}
+
+<!-- Include Bootstrap CSS from a CDN -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
+
+<div class="container mt-4">
+    <h2>Employee List with Bonuses</h2>
+    <table class="table table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Salary</th>
+                <th>Annual Bonus</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var employee in Model)
+            {
+                <tr>
+                    <td>@employee.Id</td>
+                    <td>@employee.Name</td>
+                    <td>@employee.Position</td>
+                    <td>@employee.Salary.ToString("C")</td>
+                    <td>@ViewBag.Bonuses[employee.Id].ToString("C")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

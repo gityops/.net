@@ -1,0 +1,39 @@
+﻿@{
+    ViewData["Title"] = "Demo of Cookie, Session, Query String, and Hidden Field";
+}
+
+<h2>Demo of Cookie, Session, Query String, and Hidden Field</h2>
+
+<!-- Cookie Section -->
+<h3>Cookie</h3>
+<form method="post" asp-controller="Home" asp-action="SetCookie">
+    <button type="submit" class="btn btn-primary">Set Cookie</button>
+</form>
+<form method="post" asp-controller="Home" asp-action="GetCookie">
+    <button type="submit" class="btn btn-primary">Get Cookie</button>
+</form>
+
+<!-- Session Section -->
+<h3>Session</h3>
+<form method="post" asp-controller="Home" asp-action="SetSession">
+    <button type="submit" class="btn btn-primary">Set Session</button>
+</form>
+<form method="post" asp-controller="Home" asp-action="GetSession">
+    <button type="submit" class="btn btn-primary">Get Session</button>
+</form>
+
+<!-- Query String Section -->
+<h3>Query String</h3>
+<a class="btn btn-primary" href="@Url.Action("QueryStringDemo", "Home", new { value = "Query String Value" })">Pass Query String</a>
+
+<!-- Hidden Field Section -->
+<h3>Hidden Field</h3>
+<form method="post" asp-controller="Home" asp-action="HiddenFieldDemo">
+    <input type="hidden" name="hiddenFieldValue" value="Hidden Field Value" />
+    <button type="submit" class="btn btn-primary">Submit Hidden Field</button>
+</form>
+
+@if (ViewBag.Message != null)
+{
+    <div class="alert alert-info mt-3">@ViewBag.Message</div>
+}

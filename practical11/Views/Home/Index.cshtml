@@ -1,0 +1,29 @@
+﻿@model IEnumerable<practical11.Models.Product>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h2>Product List</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Category</th>
+            <th>Supplier</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model)
+        {
+            <tr>
+                <td>@product.Name</td>
+                <td>@product.Price.ToString("C")</td>
+                <td>@product.Category.Name</td>
+                <td>@product.Supplier.Name</td>
+            </tr>
+        }
+    </tbody>
+</table>

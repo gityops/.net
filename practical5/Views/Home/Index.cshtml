@@ -1,0 +1,35 @@
+﻿@model List<practical5.Models.Bird>
+
+@{
+    ViewData["Title"] = "Bird List";
+}
+
+<!-- Include Bootstrap CSS from a CDN -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
+
+<div class="container mt-4">
+    <h2>Bird List</h2>
+    <table class="table table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th>Name</th>
+                <th>Species</th>
+                <th>Habitat</th>
+                <th>Diet</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var bird in Model)
+            {
+                <tr>
+                    <td>@bird.Name</td>
+                    <td>@bird.Species</td>
+                    <td>@bird.Habitat</td>
+                    <td>@bird.Diet</td>
+                    <td>@bird.Description</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
